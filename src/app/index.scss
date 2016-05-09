@@ -27,6 +27,15 @@ $icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/"
   }
 }
 
+body {
+  background:transparent url('/assets/images/bubbles.jpg') left top no-repeat;
+  font-family: 'Bubblegum Sans', cursive;
+}
+
+.btn-circle {
+  border-radius: 20px;
+}
+
 /**
  *  Do not remove the comments below. It's the markers used by gulp-inject to inject
  *  all your sass files automatically

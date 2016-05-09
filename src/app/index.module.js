@@ -1,7 +1,7 @@
-(function() {
+(function () {
   'use strict';
 
   angular
-    .module('fccWikipedia', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngMessages', 'ngAria', 'ui.router', 'ui.bootstrap', 'toastr']);
+    .module('app', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngMessages', 'ngAria', 'ui.router', 'ui.bootstrap', 'app.core']);
 
 })();

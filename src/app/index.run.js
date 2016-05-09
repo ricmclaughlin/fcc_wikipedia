@@ -1,8 +1,8 @@
-(function() {
+(function () {
   'use strict';
 
   angular
-    .module('fccWikipedia')
+    .module('app')
     .run(runBlock);
 
   /** @ngInject */
