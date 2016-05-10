@@ -1,25 +1,11 @@
 <div class="container">
-
   <div class="row">
-
-    <form class="form text-center">
-      <div class="col-sm-10">
-        <div class="form-group">
-          <a href="https://en.wikipedia.org/wiki/Special:Random" role="button" class="btn btn-default btn-circle">Get a Random Wikipedia Article</a>
-        </div>
-
-        <div class="form-group">
-
-          <input type="text" class="form-control btn-circle" id="search" placeholder="Search Wikipedia for..">
-
-        </div>
-        <div class="form-group">
-
-          <button type="submit" class="btn btn-default btn-circle">Search Wikipedia</button>
-
-
-        </div>
-      </div>
-    </form>
+    <div class="col-sm-12">
+      <a href="https://en.wikipedia.org/wiki/Special:Random" role="button" class="btn btn-default btn-circle">Get a Random Wikipedia Article</a>
+      <input ng-keypress="($event.charCode==13)?vm.getArticles(search):return" type="text" class="form-control btn-circle" ng-model="search" placeholder="Search Wikipedia for..">
+    </div>
+  </div>
+  <div class="row">
+    <div class="well well-lg" ng-repeat="article in vm.articles track by $index"> {{article}}</div>
   </div>
 </div>

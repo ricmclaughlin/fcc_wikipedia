@@ -6,10 +6,10 @@
     .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController($http) {
+  function MainController($http, wikiSearchService) {
     var vm = this;
-
-    vm.awesomeThings = [];
+    vm.articles = wikiSearchService.articles;
+    vm.article = wikiSearchService.article;
 
     activate();
 
@@ -17,8 +17,10 @@
 
     }
 
-    function getArticles(searchString) {
-
+    vm.getArticles = function (searchString) {
+      //async way of filling results
+      wikiSearchService.searchWiki(searchString);
+      //      vm.articles.push(vm.article);
     }
   }
 })();
