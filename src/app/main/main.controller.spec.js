@@ -2,12 +2,12 @@
   'use strict';
 
   describe('controllers', function () {
-    var vm;
+    //    var vm;
 
     beforeEach(module('app'));
-    beforeEach(inject(function (_$controller_) {
-      vm = _$controller_('MainController');
-    }));
+    //    beforeEach(inject(function (_$controller_) {
+    //      //      vm = _$controller_('MainController');
+    //  }));
 
   });
 })();

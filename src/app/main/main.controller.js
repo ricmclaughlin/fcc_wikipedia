@@ -18,9 +18,8 @@
     }
 
     vm.getArticles = function (searchString) {
-      //async way of filling results
+      wikiSearchService.clearSearch();
       wikiSearchService.searchWiki(searchString);
-      //      vm.articles.push(vm.article);
     }
   }
 })();

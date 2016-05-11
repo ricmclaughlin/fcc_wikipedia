@@ -1,11 +1,30 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-12">
-      <a href="https://en.wikipedia.org/wiki/Special:Random" role="button" class="btn btn-default btn-circle">Get a Random Wikipedia Article</a>
-      <input ng-keypress="($event.charCode==13)?vm.getArticles(search):return" type="text" class="form-control btn-circle" ng-model="search" placeholder="Search Wikipedia for..">
+      <form name="myForm" ng-submit="vm.getArticles(search)">
+        <a href="https://en.wikipedia.org/wiki/Special:Random" role="button" class="btn btn-default btn-circle">Random Article Please</a>
+        <input name="search" type="text" class="form-control btn-circle" ng-model="search" required placeholder="Search Wikipedia for..">
+      </form>
     </div>
   </div>
-  <div class="row">
-    <div class="well well-lg" ng-repeat="article in vm.articles track by $index"> {{article}}</div>
-  </div>
+  <div class="row ">
+<div class="well well-lg" ng-repeat="article in vm.articles track by $index ">
+  <a href="{{article.url}} ">{{article.title}}</a>
+  <p>{{article.extract}}</p>
+  <img ng-src="{{article.image}}" ng-alt="{{article.title}}">
 </div>
+  </div>
+
+<ul class="media-list">
+  <li class="media" ng-repeat="article in vm.articles track by $index">
+    <a class="pull-right" href="#">
+      <img ng-src="{{article.image}}" ng-alt="{{article.title}}">
+    </a>
+
+    <div class="media-body">
+      <h4 class="media-heading"><a href="{{article.url}}">{{article.title}}</a></h4>
+      <p>{{article.extract}}</p>
+    </div>
+
+  </li>
+</ul></div>
