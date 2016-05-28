@@ -36,6 +36,75 @@ body {
   border-radius: 20px;
 }
 
+.stylish {
+  font-family: 'Qwigley', cursive;
+  font-size: 25px;
+}
+
+#footer {
+  margin-top: 5px
+}
+
+i {
+  color: blue;
+}
+
+.top-space {
+  margin-top: 20px;
+}
+
+.bs-callout {
+  padding: 20px;
+  margin: 20px 0;
+  border: 1px solid #eee;
+  border-left-width: 5px;
+  border-radius: 3px;
+}
+
+.bs-callout h4 {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+.bs-callout p:last-child {
+  margin-bottom: 0;
+}
+
+.bs-callout code {
+border-radius: 3px;
+}
+
+.bs-callout+.bs-callout {
+  margin-top: -5px;
+}
+
+@mixin bs-mixin($name, $callout-color) {
+
+  // Callout border color
+  .#{$name} {
+    border-left-color: $callout-color;
+  }
+  // Callout header color
+  .#{$name} h4, .#{$name} h4 a {
+    color: $callout-color;
+  }
+}
+
+$gray: #indigo;
+$brand-primary: #428bca;
+$brand-info: #5bc0de;
+$brand-danger: purple;
+$brand-warning: #f0ad4e;
+$brand-success: #5cb85c;
+
+@include bs-mixin(bs-callout-default, $gray);
+@include bs-mixin(bs-callout-primary, $brand-primary);
+@include bs-mixin(bs-callout-info, $brand-info);
+@include bs-mixin(bs-callout-danger, $brand-danger);
+@include bs-mixin(bs-callout-warning, $brand-warning);
+@include bs-mixin(bs-callout-success, $brand-success);
+
+
 /**
  *  Do not remove the comments below. It's the markers used by gulp-inject to inject
  *  all your sass files automatically

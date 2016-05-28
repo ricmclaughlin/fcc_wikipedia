@@ -1,30 +1,36 @@
 <div class="container">
-  <div class="row">
-    <div class="col-sm-12">
+  <div class="row top-space">
+    <div class="">
+
+      <h1>Wikipedia Search App</h1>
+
+    </div>
+    <div class="container top-space">
       <form name="myForm" ng-submit="vm.getArticles(search)">
-        <a href="https://en.wikipedia.org/wiki/Special:Random" role="button" class="btn btn-default btn-circle">Random Article Please</a>
-        <input name="search" type="text" class="form-control btn-circle" ng-model="search" required placeholder="Search Wikipedia for..">
+        <div class="row">
+          <div class="col-sm-6">
+            <input name="search" type="text" class="form-control btn-circle" ng-model="search" required placeholder="Search Wikipedia for..">
+          </div>
+
+          <div class="col-sm-6">
+            <a href="https://en.wikipedia.org/wiki/Special:Random" role="button" class="btn btn-default btn-circle">Random Article Please</a>
+          </div>
+        </div>
       </form>
+
+      <div class="container top-space">
+        <div class="row" ng-repeat="article in vm.articles track by $index ">
+          <div class="bs-callout" ng-class-even="'bs-callout-info'" ng-class-odd="'bs-callout-success'">
+            <div class="row">
+              <div class="col-sm-8">
+                <h4><a href="{{article.url}} ">{{article.title}}</a></h4>{{article.extract}}
+              </div>
+              <div class="col-sm-4">
+                <img ng-src="{{article.image}}" ng-alt="{{article.title}}">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p id="footer"> Made with <span class="stylish">style</span> by <a href="http://ric.mclaughlin.today">Ric McLaughlin</a></p>
     </div>
-  </div>
-  <div class="row ">
-<div class="well well-lg" ng-repeat="article in vm.articles track by $index ">
-  <a href="{{article.url}} ">{{article.title}}</a>
-  <p>{{article.extract}}</p>
-  <img ng-src="{{article.image}}" ng-alt="{{article.title}}">
-</div>
-  </div>
-
-<ul class="media-list">
-  <li class="media" ng-repeat="article in vm.articles track by $index">
-    <a class="pull-right" href="#">
-      <img ng-src="{{article.image}}" ng-alt="{{article.title}}">
-    </a>
-
-    <div class="media-body">
-      <h4 class="media-heading"><a href="{{article.url}}">{{article.title}}</a></h4>
-      <p>{{article.extract}}</p>
-    </div>
-
-  </li>
-</ul></div>

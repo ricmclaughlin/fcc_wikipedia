@@ -20,6 +20,6 @@
     vm.getArticles = function (searchString) {
       wikiSearchService.clearSearch();
       wikiSearchService.searchWiki(searchString);
-    }
+    };
   }
 })();
